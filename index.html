@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geert Rymenants — Software Development</title>
+    <meta name="description" content="Geert Rymenants — Independent software developer based in Belgium. Specializing in cross-platform app development, systems architecture, and educational technology.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #FAFAF8;
+            --bg-card: #FFFFFF;
+            --text: #1A1A18;
+            --text-secondary: #6B6B66;
+            --accent: #2C5F41;
+            --accent-light: #E8F0EB;
+            --border: #E8E8E4;
+            --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        html { font-size: 17px; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header */
+        header {
+            padding: 4rem 0 3rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .monogram {
+            width: 52px;
+            height: 52px;
+            background: var(--accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.4rem;
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .tagline {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            font-weight: 300;
+            max-width: 480px;
+        }
+
+        /* Sections */
+        section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section:last-of-type { border-bottom: none; }
+
+        h2 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            margin-bottom: 1.25rem;
+        }
+
+        p { margin-bottom: 1rem; }
+        p:last-child { margin-bottom: 0; }
+
+        /* Focus cards */
+        .focus-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .focus-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem;
+            box-shadow: var(--shadow);
+        }
+
+        .focus-card .icon {
+            font-size: 1.3rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .focus-card h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 500;
+            margin-bottom: 0.35rem;
+        }
+
+        .focus-card p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Project highlight */
+        .project {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .project h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 0.4rem;
+        }
+
+        .project .badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-bottom: 0.8rem;
+        }
+
+        .project p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+        }
+
+        /* Contact */
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .contact-row a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--accent-light);
+            transition: border-color 0.2s;
+        }
+
+        .contact-row a:hover {
+            border-color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            padding: 2.5rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+        }
+
+        footer .location {
+            margin-top: 0.3rem;
+            font-size: 0.75rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 520px) {
+            html { font-size: 16px; }
+            header { padding: 3rem 0 2.5rem; }
+            h1 { font-size: 1.9rem; }
+            .focus-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="monogram">GR</div>
+            <h1>Geert Rymenants</h1>
+            <p class="tagline">Independent software developer. Building cross-platform applications, systems architecture, and educational technology.</p>
+        </header>
+
+        <section>
+            <h2>Focus</h2>
+            <div class="focus-grid">
+                <div class="focus-card">
+                    <div class="icon">📱</div>
+                    <h3>App Development</h3>
+                    <p>Cross-platform applications with Flutter for iOS, Android & Web.</p>
+                </div>
+                <div class="focus-card">
+                    <div class="icon">🧬</div>
+                    <h3>Systems Architecture</h3>
+                    <p>Designing robust, scalable systems from the ground up.</p>
+                </div>
+                <div class="focus-card">
+                    <div class="icon">🔬</div>
+                    <h3>Educational Technology</h3>
+                    <p>Making complex knowledge accessible through interactive experiences.</p>
+                </div>
+                <div class="focus-card">
+                    <div class="icon">🤖</div>
+                    <h3>AI Integration</h3>
+                    <p>Leveraging AI as an amplifier in software development workflows.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Current Project</h2>
+            <div class="project">
+                <h3>DiscoveryLab</h3>
+                <span class="badge">In development</span>
+                <p>An educational app that makes complex knowledge accessible through interactive lessons. Three labs for different age groups — from playful discovery to deep systems thinking. No ads, no subscriptions, no manipulation.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+            <div class="contact-row">
+                <a href="/cdn-cgi/l/email-protection#13747676616753616a7e767d727d67603d777665"><span class="__cf_email__" data-cfemail="82e5e7e7f0f6c2f0fbefe7ece3ecf6f1ace6e7f4">[email&#160;protected]</span></a>
+                <a href="https://github.com/RyGe87" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </section>
+
+        <footer>
+        
